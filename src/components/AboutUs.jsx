@@ -6,7 +6,7 @@ const orgJsonLd = {
   "@type": "Organization",
   "name": "iOVU Shop",
   "url": "https://iovu-shop.vercel.app/",
-  "logo": "https://iovu-shop.vercel.app/logo.png",
+  "logo": "https://iovu-shop.vercel.app/logo.svg",
   "foundingDate": "2022-01-01",
   "award": ["2023 대한민국 우수브랜드 대상"],
   "sameAs": [
@@ -39,7 +39,7 @@ export default function AboutUs() {
           <Typography sx={{ mb: 3 }}>
             2022년 설립, 2023 대한민국 우수브랜드 대상 수상 등 다양한 성과를 이루었습니다.
           </Typography>
-          <img src="/logo.png" alt="iOVU 본사" style={{ width: 200, display: 'block', margin: '0 auto' }} />
+          <img src="/logo.svg" alt="iOVU 본사" style={{ width: 200, display: 'block', margin: '0 auto' }} />
         </Paper>
       </Container>
     </Box>

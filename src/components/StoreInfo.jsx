@@ -56,7 +56,7 @@ export default function StoreInfo() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": currentMessages.storeName,
-    "image": "https://iovu-shop.vercel.app/logo.png",
+    "image": "https://iovu-shop.vercel.app/logo.svg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": lang === 'en' ? "123 Teheran-ro" : "테헤란로 123",

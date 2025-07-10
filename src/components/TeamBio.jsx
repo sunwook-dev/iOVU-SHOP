@@ -6,7 +6,7 @@ const team = [
     name: "홍길동",
     role: "CEO & Founder",
     bio: "패션 업계 15년 경력, 브랜드 비전 제시.",
-    image: "/logo.png",
+    image: "/logo.svg",
     alumniOf: "서울대학교",
     knowsAbout: ["패션 디자인", "브랜드 경영"]
   },
@@ -14,7 +14,7 @@ const team = [
     name: "Jane Kim",
     role: "Chief Designer",
     bio: "트렌디한 디자인과 혁신을 이끄는 수석 디자이너.",
-    image: "/logo.png",
+    image: "/logo.svg",
     alumniOf: "Parsons School of Design",
     knowsAbout: ["패션 일러스트", "소재 개발"]
   }

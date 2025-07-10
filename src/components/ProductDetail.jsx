@@ -112,7 +112,7 @@ function ProductDetail() {
       "name": "iOVU Shop",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://iovu-shop.vercel.app/public/logo.png"
+        "url": "https://iovu-shop.vercel.app/public/logo.svg"
       }
     },
     "datePublished": product.datePublished || "2024-06-01",

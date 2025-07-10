@@ -54,7 +54,7 @@ function App() {
               "@type": "Organization",
               "name": "iOVU Shop",
               "url": "https://iovu-shop.vercel.app/",
-              "logo": "https://iovu-shop.vercel.app/logo.png",
+              "logo": "https://iovu-shop.vercel.app/logo.svg",
               "sameAs": [
                 "https://www.facebook.com/yourpage",
                 "https://www.instagram.com/yourpage"

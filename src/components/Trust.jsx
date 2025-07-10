@@ -13,7 +13,7 @@ const orgJsonLd = {
   "@type": "Organization",
   "name": "iOVU Shop",
   "url": "https://iovu-shop.vercel.app/",
-  "logo": "https://iovu-shop.vercel.app/public/logo.png",
+  "logo": "https://iovu-shop.vercel.app/public/logo.svg",
   "contactPoint": [{
     "@type": "ContactPoint",
     "telephone": "+82-2-1234-5678",
