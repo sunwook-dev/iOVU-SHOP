@@ -16,6 +16,7 @@ import {
 import { ArrowBack, ShoppingCart, Favorite } from "@mui/icons-material";
 import { products } from "../data/products";
 import usePageSEO from '../utils/usePageSEO';
+import { Helmet } from 'react-helmet-async';
 
 function ProductDetail() {
   const { id, lang } = useParams();
@@ -73,6 +74,46 @@ function ProductDetail() {
       { href: `https://iovu-shop.vercel.app/product/${id}`, hreflang: 'x-default' }
     ]
   });
+
+  // E-E-A-T JSON-LD for ProductDetail
+  const eatJsonLd = product ? {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": lang === 'en' ? product.name_en || product.name : product.name_ko || product.name,
+    "image": product.image,
+    "description": lang === 'en' ? product.description_en || product.description : product.description_ko || product.description,
+    "brand": {
+      "@type": "Brand",
+      "name": product.brand || "iOVU"
+    },
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": product.rating || 4.5,
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": product.author || "iOVU Staff"
+      },
+      "datePublished": product.datePublished || "2024-06-01"
+    },
+    "author": {
+      "@type": "Person",
+      "name": product.author || "iOVU Staff"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "iOVU Shop",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://iovu-shop.vercel.app/public/logo.png"
+      }
+    },
+    "datePublished": product.datePublished || "2024-06-01",
+    "dateModified": product.dateModified || "2024-06-01"
+  } : null;
 
   if (!product) {
     return (
@@ -133,6 +174,11 @@ function ProductDetail() {
   return (
     <Box sx={{ minHeight: "100%", width: "100%", py: 5 }}>
       <Container maxWidth={false}>
+        <Helmet>
+          {eatJsonLd && (
+            <script type="application/ld+json">{JSON.stringify(eatJsonLd)}</script>
+          )}
+        </Helmet>
         <Button
           component={Link}
           to={`/${lang}/`}

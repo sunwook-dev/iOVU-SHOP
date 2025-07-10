@@ -14,6 +14,7 @@ import TeamBio from "./components/TeamBio";
 import EditorialGuidelines from "./components/EditorialGuidelines";
 import Evidence from "./components/Evidence";
 import Certifications from "./components/Certifications";
+import Trust from './components/Trust';
 
 // 언어별 라우트 Wrapper
 function LangRoutes() {
@@ -71,6 +72,7 @@ function App() {
           <Route path="/editorial" element={<EditorialGuidelines />} />
           <Route path="/evidence" element={<Evidence />} />
           <Route path="/certifications" element={<Certifications />} />
+          <Route path="/trust" element={<Trust />} />
         </Routes>
       </Router>
     </HelmetProvider>
