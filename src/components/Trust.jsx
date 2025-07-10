@@ -22,7 +22,11 @@ const orgJsonLd = {
     "availableLanguage": ["Korean", "English"]
   }],
   "sameAs": [
-    "https://www.instagram.com/iovu_shop/"
+    "https://en.wikipedia.org/wiki/IOVU_Shop",
+    "https://www.wikidata.org/wiki/Q1234567",
+    "https://www.instagram.com/iovu_shop/",
+    "https://www.threads.net/@iovu_shop",
+    "https://www.crunchbase.com/organization/iovu-shop"
   ]
 };
 

@@ -86,6 +86,10 @@ function ProductDetail() {
       "@type": "Brand",
       "name": product.brand || "iOVU"
     },
+    ...(product.gtin13 && { "gtin13": product.gtin13 }),
+    ...(product.sku && { "sku": product.sku }),
+    ...(product.mpn && { "mpn": product.mpn }),
+    ...(product.gs1DigitalLink && { "url": product.gs1DigitalLink }),
     "review": {
       "@type": "Review",
       "reviewRating": {
