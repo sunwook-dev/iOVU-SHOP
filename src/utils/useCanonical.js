@@ -14,9 +14,9 @@ export const useCanonical = (pagePath = "/") => {
     canonical.rel = "canonical";
 
     if (currentLang === "en") {
-      canonical.href = `https://en.dongraelaw.shop${pagePath}`;
+      canonical.href = `https://i-ovu-shop-tsyl.vercel.app/en/${pagePath}`;
     } else {
-      canonical.href = `https://ko.dongraelaw.shop${pagePath}`;
+      canonical.href = `https://i-ovu-shop-tsyl.vercel.app/ko/${pagePath}`;
     }
 
     document.head.appendChild(canonical);

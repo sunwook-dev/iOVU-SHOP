@@ -63,33 +63,6 @@ function ProductDetail() {
     }
   };
 
-  // Product 구조화 데이터 생성
-  const productJsonLd = product && {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": product.name,
-    "image": product.image,
-    "description": product.description,
-    "brand": {
-      "@type": "Brand",
-      "name": product.brand || "iOVU"
-    },
-    "material": product.material || undefined,
-    "sku": product.id,
-    "offers": {
-      "@type": "Offer",
-      "price": product.price,
-      "priceCurrency": "KRW",
-      "availability": product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-      "url": typeof window !== 'undefined' ? window.location.href : undefined
-    },
-    "aggregateRating": product.rating && product.reviews ? {
-      "@type": "AggregateRating",
-      "ratingValue": product.rating,
-      "reviewCount": product.reviews
-    } : undefined
-  };
-
   usePageSEO({
     title: (product ? (lang === 'en' ? product.name_en : product.name_ko) : '') + ' | iOVU Shop',
     description: product ? (lang === 'en' ? product.description_en : product.description_ko) : '',
@@ -157,7 +130,6 @@ function ProductDetail() {
     );
   };
 
-  const baseUrl = "https://iovu-shop.vercel.app";
   return (
     <Box sx={{ minHeight: "100%", width: "100%", py: 5 }}>
       <Container maxWidth={false}>
@@ -209,7 +181,9 @@ function ProductDetail() {
                 color="primary"
                 sx={{ fontWeight: "bold", mb: 3 }}
               >
-                {product.price.toLocaleString()}원
+                {lang === "en"
+                  ? `₩${product.price.toLocaleString()}`
+                  : `${product.price.toLocaleString()}원`}
               </Typography>
 
               <Divider sx={{ my: 3 }} />
@@ -241,11 +215,11 @@ function ProductDetail() {
                   <tbody>
                     <tr>
                       <td style={{ padding: 8, border: '1px solid #eee' }}>{product.brand || 'iOVU'}</td>
-                      <td style={{ padding: 8, border: '1px solid #eee' }}>{product.material || '-'}</td>
+                      <td style={{ padding: 8, border: '1px solid #eee' }}>{lang === 'en' ? (product.material_en || product.material) : product.material}</td>
                       <td style={{ padding: 8, border: '1px solid #eee' }}>{product.sizes && product.sizes.length > 0 ? product.sizes.join(', ') : '-'}</td>
-                      <td style={{ padding: 8, border: '1px solid #eee' }}>{product.colors && product.colors.length > 0 ? product.colors.join(', ') : '-'}</td>
-                      <td style={{ padding: 8, border: '1px solid #eee' }}>{typeof product.stock === 'number' ? product.stock + '개' : '-'}</td>
-                      <td style={{ padding: 8, border: '1px solid #eee' }}>{product.rating ? `${product.rating} / 5.0 (${product.reviews}건)` : '-'}</td>
+                      <td style={{ padding: 8, border: '1px solid #eee' }}>{product.colors && product.colors.length > 0 ? (lang === 'en' ? (product.colors_en ? product.colors_en.join(', ') : product.colors.join(', ')) : product.colors.join(', ')) : '-'}</td>
+                      <td style={{ padding: 8, border: '1px solid #eee' }}>{typeof product.stock === 'number' ? (lang === 'en' ? `${product.stock} pcs` : `${product.stock}개`) : '-'}</td>
+                      <td style={{ padding: 8, border: '1px solid #eee' }}>{product.rating ? (lang === 'en' ? `${product.rating} / 5.0 (${product.reviews} reviews)` : `${product.rating} / 5.0 (${product.reviews}건)`) : '-'}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -282,9 +256,9 @@ function ProductDetail() {
                 {messages[lang]?.selectColor}
               </Typography>
               <Box sx={{ display: "flex", gap: 1, mb: 4, flexWrap: "wrap" }}>
-                {product.colors.map((color) => (
+                {product.colors && (lang === 'en' ? (product.colors_en || product.colors) : product.colors).map((color, idx) => (
                   <Chip
-                    key={color}
+                    key={color + idx}
                     label={color}
                     variant={selectedColor === color ? "filled" : "outlined"}
                     color={selectedColor === color ? "primary" : "default"}

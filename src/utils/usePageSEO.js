@@ -22,15 +22,15 @@ const usePageSEO = (pagePath = "/") => {
     const hreflangs = [
       {
         hreflang: "ko",
-        href: `http://localhost:5173/ko/${pagePath}`,
+        href: `https://i-ovu-shop-tsyl.vercel.app/ko/${pagePath}`,
       },
       {
         hreflang: "en",
-        href: `http://localhost:5173/en/${pagePath}`,
+        href: `https://i-ovu-shop-tsyl.vercel.app/en/${pagePath}`,
       },
       {
         hreflang: "x-default",
-        href: `http://localhost:5173/ko/${pagePath}`, // 기본값을 한국어로 설정
+        href: `https://i-ovu-shop-tsyl.vercel.app/ko/${pagePath}`, // 기본값을 한국어로 설정
       },
     ];
 
@@ -46,9 +46,9 @@ const usePageSEO = (pagePath = "/") => {
     canonical.rel = "canonical";
 
     if (currentLang === "en") {
-      canonical.href = `http://localhost:5173/en/${pagePath}`;
+      canonical.href = `https://i-ovu-shop-tsyl.vercel.app/en/${pagePath}`;
     } else {
-      canonical.href = `http://localhost:5173/ko/${pagePath}`;
+      canonical.href = `https://i-ovu-shop-tsyl.vercel.app/ko/${pagePath}`;
     }
 
     document.head.appendChild(canonical);
