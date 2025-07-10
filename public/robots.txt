@@ -1,0 +1,28 @@
+# robots.txt for iOVU SHOP
+
+User-agent: *
+Disallow: /admin/
+Disallow: /cart?*
+Disallow: /internal/
+Disallow: /*?*sort=*
+Allow: /cart/thank-you
+Allow: /*.css$
+Allow: /
+
+Sitemap: https://iovu-shop.vercel.app/sitemap.xml
+
+# Bot별 정책
+User-agent: GPTBot
+Disallow: /internal/
+User-agent: AdsBot-Google
+Crawl-delay: 5
+
+# 스테이징 차단 예시 (실서비스 전 노출 방지)
+# Disallow: /   # (스테이징 서버에서만 활성화)
+# X-Robots-Tag: noindex
+
+# IndexNow (Bing)
+# indexnow: https://iovu-shop.vercel.app/api/indexnow_key
+
+# 추가 Sitemap 선언 (중복 허용)
+# Sitemap: https://iovu-shop.vercel.app/another-sitemap.xml 
