@@ -4,8 +4,7 @@ export const products = [
     name_ko: "클래식 화이트 티셔츠",
     name_en: "Classic White T-Shirt",
     price: 29000,
-    image:
-      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=600&fit=crop",
+    image: "/images/Classic White T-Shirt.png",
     description_ko: "깔끔하고 심플한 기본 티셔츠",
     description_en: "A clean and simple basic t-shirt",
     details_ko:
@@ -38,8 +37,7 @@ export const products = [
     name_ko: "스트라이프 네이비 티셔츠",
     name_en: "Navy Stripe T-Shirt",
     price: 35000,
-    image:
-      "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600&h=600&fit=crop",
+    image: "/images/Navy Stripe T-Shirt.png",
     description_ko: "세련된 스트라이프 패턴의 티셔츠",
     description_en: "A stylish t-shirt with a classic stripe pattern",
     details_ko:
@@ -72,8 +70,7 @@ export const products = [
     name_ko: "그래픽 프린트 티셔츠",
     name_en: "Graphic Print T-Shirt",
     price: 42000,
-    image:
-      "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600&h=600&fit=crop",
+    image: "/images/Graphic Print T-Shirt.png",
     description_ko: "독특한 그래픽이 인상적인 티셔츠",
     description_en: "A t-shirt with a unique and impressive graphic print",
     details_ko:
@@ -106,8 +103,7 @@ export const products = [
     name_ko: "오버핏 블랙 티셔츠",
     name_en: "Oversized Black T-Shirt",
     price: 21000,
-    image:
-      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&h=600&fit=crop",
+    image: "/images/Oversized Black T-Shirt.png",
     description_ko: "트렌디한 오버핏의 블랙 티셔츠",
     description_en: "Trendy oversized black t-shirt",
     details_ko:
@@ -140,8 +136,7 @@ export const products = [
     name_ko: "여성 크롭 티셔츠",
     name_en: "Women's Crop T-Shirt",
     price: 27000,
-    image:
-      "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=600&h=600&fit=crop",
+    image: "/images/Women's Crop T-Shirt.png",
     description_ko: "스타일리시한 크롭 디자인의 티셔츠",
     description_en: "A stylish crop design t-shirt for women",
     details_ko:
@@ -173,8 +168,7 @@ export const products = [
     name_ko: "유니섹스 무지 티셔츠",
     name_en: "Unisex Plain T-Shirt",
     price: 18000,
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&h=600&fit=crop",
+    image: "/images/Unisex Plain T-Shirt.png",
     description_ko: "베이직한 무지 디자인의 티셔츠",
     description_en: "A basic plain design t-shirt for everyone",
     details_ko: "남녀 모두에게 잘 어울리는 심플한 무지 티셔츠입니다.",
@@ -205,8 +199,7 @@ export const products = [
     name_ko: "여성 레이스 티셔츠",
     name_en: "Women's Lace T-Shirt",
     price: 38000,
-    image:
-      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&h=600&fit=crop",
+    image: "/images/Women's Lace T-Shirt.png",
     description_ko: "우아한 레이스 디테일이 돋보이는 티셔츠",
     description_en: "A t-shirt with elegant lace details",
     details_ko:
@@ -239,8 +232,7 @@ export const products = [
     name_ko: "남성 폴로 티셔츠",
     name_en: "Men's Polo T-Shirt",
     price: 45000,
-    image:
-      "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=600&h=600&fit=crop",
+    image: "/images/Men's Polo T-Shirt.png",
     description_ko: "클래식한 폴로 디자인의 티셔츠",
     description_en: "A t-shirt with a classic polo design",
     details_ko:
@@ -273,8 +265,7 @@ export const products = [
     name_ko: "유니섹스 베이직 티셔츠",
     name_en: "Unisex Basic T-Shirt",
     price: 15000,
-    image:
-      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&h=600&fit=crop",
+    image: "/images/Unisex Basic T-Shirt.png",
     description_ko: "누구나 편하게 입을 수 있는 베이직 티셔츠",
     description_en: "A basic t-shirt that anyone can wear comfortably",
     details_ko:
@@ -307,8 +298,7 @@ export const products = [
     name_ko: "여성 루즈핏 티셔츠",
     name_en: "Women's Loose Fit T-Shirt",
     price: 32000,
-    image:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&h=600&fit=crop",
+    image: "/images/Women's Loose Fit T-Shirt.png",
     description_ko: "편안한 루즈핏의 여성 티셔츠",
     description_en: "A comfortable loose fit t-shirt for women",
     details_ko:
