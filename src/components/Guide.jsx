@@ -123,7 +123,7 @@ export default function Guide() {
         <script type="application/ld+json">{JSON.stringify(howToJsonLd)}</script>
       </Helmet>
       <Container maxWidth="md">
-        <Paper elevation={3} sx={{ p: 5, borderRadius: 3, mb: 4 }}>
+        <Paper elevation={0} sx={{ p: 5, borderRadius: 3, bgcolor: 'transparent', boxShadow: 'none' }}>
           <Typography variant="h3" component="h1" align="center" sx={{ fontWeight: 700, mb: 2 }}>
             {currentMessages.title}
           </Typography>

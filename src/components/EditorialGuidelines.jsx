@@ -1,56 +1,82 @@
-import { Container, Typography, Box, Paper } from '@mui/material';
+import { Box, Container, Typography, Paper, Divider, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import { Helmet } from 'react-helmet-async';
+import EditNoteIcon from '@mui/icons-material/EditNote';
+import FactCheckIcon from '@mui/icons-material/FactCheck';
+import SmartToyIcon from '@mui/icons-material/SmartToy';
+import UpdateIcon from '@mui/icons-material/Update';
+import BusinessIcon from '@mui/icons-material/Business';
 
 const messages = {
   ko: {
-    title: "에디토리얼 가이드라인",
-    desc: "iOVU Shop의 모든 콘텐츠는 정확성, 신뢰성, 투명성을 바탕으로 작성됩니다. AI 및 전문가 검수 과정을 거치며, 정기적으로 업데이트됩니다.",
-    principle1: "- 콘텐츠 작성 원칙: 사실 기반, 최신 정보 유지, 투명한 출처 공개",
-    principle2: "- AI 및 전문가 검수: AI 초안 + 전문가 최종 검수",
-    principle3: "- 정기 업데이트 및 책임 부서 명시"
+    title: "운영원칙",
+    desc: "iOVU SHOP은 신뢰할 수 있는 정보 제공을 위해 아래의 운영원칙을 엄격히 준수합니다.",
+    sections: [
+      {
+        icon: <EditNoteIcon color="primary" />, title: "콘텐츠 작성", desc: "모든 콘텐츠는 전문 에디터가 최신 트렌드와 고객의 니즈를 반영하여 직접 작성합니다."
+      },
+      {
+        icon: <FactCheckIcon color="success" />, title: "사실 검증", desc: "상품 정보, 소재, 인증 등은 공식 자료와 전문가 검토를 통해 사실 여부를 꼼꼼히 확인합니다."
+      },
+      {
+        icon: <SmartToyIcon color="info" />, title: "AI 사용 정책", desc: "AI는 초안 작성 및 데이터 분석에 활용되며, 최종 공개 전 반드시 사람이 검수합니다."
+      },
+      {
+        icon: <UpdateIcon color="warning" />, title: "업데이트 주기", desc: "모든 정보는 최소 월 1회 이상 정기적으로 업데이트되며, 변경 시 즉시 반영합니다."
+      },
+      {
+        icon: <BusinessIcon color="secondary" />, title: "책임 부서", desc: "콘텐츠팀(문의: editorial@iovu-shop.com)이 운영원칙 준수 및 정보 관리를 책임집니다."
+      }
+    ]
   },
   en: {
     title: "Editorial Guidelines",
-    desc: "All content at iOVU Shop is created based on accuracy, reliability, and transparency. It is reviewed by AI and experts, and updated regularly.",
-    principle1: "- Content Principles: Fact-based, up-to-date, transparent sources",
-    principle2: "- AI & Expert Review: AI draft + expert final review",
-    principle3: "- Regular updates and responsible department disclosure"
+    desc: "iOVU SHOP strictly adheres to the following editorial guidelines to provide trustworthy information.",
+    sections: [
+      {
+        icon: <EditNoteIcon color="primary" />, title: "Content Creation", desc: "All content is created by professional editors, reflecting the latest trends and customer needs."
+      },
+      {
+        icon: <FactCheckIcon color="success" />, title: "Fact-Checking", desc: "Product details, materials, and certifications are thoroughly verified by official documents and expert review."
+      },
+      {
+        icon: <SmartToyIcon color="info" />, title: "AI Usage Policy", desc: "AI is used for drafting and data analysis, but all content is human-reviewed before publication."
+      },
+      {
+        icon: <UpdateIcon color="warning" />, title: "Update Frequency", desc: "All information is updated at least monthly, and changes are reflected immediately."
+      },
+      {
+        icon: <BusinessIcon color="secondary" />, title: "Responsible Department", desc: "The Content Team (contact: editorial@iovu-shop.com) is responsible for compliance and information management."
+      }
+    ]
   }
-};
-
-const editorialJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Editorial Guidelines",
-  "publishingPrinciples": "https://iovu-shop.vercel.app/editorial",
-  "description": "iOVU Shop의 모든 콘텐츠는 정확성, 신뢰성, 투명성을 바탕으로 작성됩니다. AI 및 전문가 검수 과정을 거치며, 정기적으로 업데이트됩니다."
 };
 
 export default function EditorialGuidelines({ lang = "ko" }) {
   const t = messages[lang] || messages.ko;
-  const editorialJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": t.title,
-    "publishingPrinciples": "https://iovu-shop.vercel.app/editorial",
-    "description": t.desc
-  };
   return (
     <Box sx={{ minHeight: '70vh', bgcolor: '#f5f7fa', py: 6 }}>
       <Helmet>
         <title>{t.title} | iOVU Shop</title>
-        <script type="application/ld+json">{JSON.stringify(editorialJsonLd)}</script>
       </Helmet>
       <Container maxWidth="md">
-        <Paper elevation={3} sx={{ p: 5, borderRadius: 3 }}>
-          <Typography variant="h3" component="h1" align="center" sx={{ fontWeight: 700, mb: 3 }}>
+        <Box sx={{ p: { xs: 2, md: 5 }, borderRadius: 3, bgcolor: 'transparent', boxShadow: 'none' }}>
+          <Typography variant="h3" component="h1" align="center" sx={{ fontWeight: 700, mb: 4, letterSpacing: 2 }}>
             {t.title}
           </Typography>
-          <Typography sx={{ mb: 2 }}>{t.desc}</Typography>
-          <Typography sx={{ mb: 2 }}>{t.principle1}</Typography>
-          <Typography sx={{ mb: 2 }}>{t.principle2}</Typography>
-          <Typography>{t.principle3}</Typography>
-        </Paper>
+          <Typography align="center" sx={{ mb: 4, color: '#1976d2', fontWeight: 500 }}>{t.desc}</Typography>
+          <Divider sx={{ mb: 4 }} />
+          <List>
+            {t.sections.map((section, idx) => (
+              <ListItem key={idx} alignItems="flex-start" sx={{ mb: 3 }}>
+                <ListItemIcon sx={{ minWidth: 44 }}>{section.icon}</ListItemIcon>
+                <ListItemText
+                  primary={<Typography variant="h6" sx={{ fontWeight: 600 }}>{section.title}</Typography>}
+                  secondary={<Typography variant="body1" color="text.secondary">{section.desc}</Typography>}
+                />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
       </Container>
     </Box>
   );

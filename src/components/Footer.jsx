@@ -24,9 +24,9 @@ function Footer() {
       companyInfo: "회사정보",
       about: "회사소개",
       team: "팀 소개",
-      editorial: "에디토리얼 가이드",
-      evidence: "과학적/CSR 증거",
-      certifications: "인증/트러스트",
+      editorial: "운영원칙",
+      evidence: "기업의 사회적 책임",
+      certifications: "인증",
       terms: "이용약관",
       privacy: "개인정보처리방침",
       copyright: "© 2025 IOVU SHOP. All rights reserved."

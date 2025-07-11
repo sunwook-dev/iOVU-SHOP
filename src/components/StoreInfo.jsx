@@ -115,7 +115,7 @@ export default function StoreInfo() {
   return (
     <Box sx={{ minHeight: '70vh', bgcolor: '#f5f7fa', py: 6 }}>
       <Container maxWidth="sm">
-        <Paper elevation={3} sx={{ p: 5, borderRadius: 3 }}>
+        <Paper elevation={0} sx={{ p: 5, borderRadius: 3, bgcolor: 'transparent', boxShadow: 'none' }}>
           <Typography variant="h3" component="h1" align="center" sx={{ fontWeight: 700, mb: 3 }}>
             {currentMessages.title}
           </Typography>
