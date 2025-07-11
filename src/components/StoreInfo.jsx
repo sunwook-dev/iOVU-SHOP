@@ -111,7 +111,6 @@ export default function StoreInfo() {
     ]
   };
 
-  const baseUrl = "https://iovu-shop.vercel.app";
   usePageSEO({
     title: currentMessages.title + ' | iOVU Shop',
     canonical: `https://iovu-shop.vercel.app/${lang}/store`,
@@ -188,15 +187,27 @@ export default function StoreInfo() {
             </Button>
           </Stack>
           <Box sx={{ mt: 4, textAlign: 'center' }}>
+            {/* Google Maps */}
             <iframe
-              title={currentMessages.mapTitle}
+              title="Google Map"
               width="100%"
               height="250"
-              frameBorder="0"
-              style={{ border: 0, borderRadius: 8 }}
-              src="https://www.openstreetmap.org/export/embed.html?bbox=127.0379%2C37.5005%2C127.0412%2C37.5020&amp;layer=mapnik&amp;marker=37.5012743%2C127.039585"
+              style={{ border: 0, borderRadius: 8, marginBottom: 16 }}
+              loading="lazy"
               allowFullScreen
-            ></iframe>
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=37.5012743,127.039585&hl=ko&z=16&output=embed"
+            />
+            {/* Bing Maps */}
+            <iframe
+              title="Bing Map"
+              width="100%"
+              height="250"
+              style={{ border: 0, borderRadius: 8, marginBottom: 16 }}
+              src="https://www.bing.com/maps/embed?h=250&w=500&cp=37.5012743~127.039585&lvl=16&typ=d&sty=r&src=SHELL&FORM=MBEDV8"
+              scrolling="no"
+              allowFullScreen
+            />
             <Typography variant="caption" color="text.secondary">
               {currentMessages.mapDescription}
             </Typography>
