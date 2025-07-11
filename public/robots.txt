@@ -9,7 +9,7 @@ Allow: /cart/thank-you
 Allow: /*.css$
 Allow: /
 
-Sitemap: https://iovu-shop.vercel.app/sitemap.xml
+Sitemap: https://i-ovu-shop-tsyl.vercel.app/sitemap.xml
 
 # Bot별 정책
 User-agent: GPTBot
