@@ -100,10 +100,10 @@ export default function TeamBio({ lang = "ko" }) {
         <Typography variant="h3" component="h1" align="center" sx={{ fontWeight: 700, mb: 5, letterSpacing: 2 }}>
           {t.title}
         </Typography>
-        <Grid container spacing={4} justifyContent="center">
+        <Grid container spacing={4} justifyContent="center" alignItems="stretch">
           {team.map((member, i) => (
-            <Grid item xs={12} md={6} key={i}>
-              <Paper elevation={0} sx={{ p: 4, borderRadius: 3, bgcolor: 'transparent', boxShadow: 'none', border: '1px solid #e0e0e0', minHeight: 420 }}>
+            <Grid item xs={12} md={6} key={i} sx={{ display: 'flex', height: '100%' }}>
+              <Paper elevation={0} sx={{ p: 4, borderRadius: 3, bgcolor: 'transparent', boxShadow: 'none', border: '1px solid #e0e0e0', display: 'flex', flexDirection: 'column', height: '100%' }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                   <Avatar src={member.image} sx={{ width: 72, height: 72, mr: 2 }} />
                   <Box>
@@ -112,31 +112,33 @@ export default function TeamBio({ lang = "ko" }) {
                   </Box>
                 </Box>
                 <Divider sx={{ my: 2 }} />
-                <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
-                  <WorkIcon color="primary" fontSize="small" />
-                  <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.career}:</Typography>
-                  <Typography variant="body2">{member.career[lang] || member.career.ko}</Typography>
-                </Stack>
-                <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
-                  <SchoolIcon color="primary" fontSize="small" />
-                  <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.degree}:</Typography>
-                  <Typography variant="body2">{member.degree[lang] || member.degree.ko}</Typography>
-                </Stack>
-                <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
-                  <VerifiedIcon color="success" fontSize="small" />
-                  <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.cert}:</Typography>
-                  {member.cert[lang] ? member.cert[lang].map((c, idx) => (
-                    <Chip key={idx} label={c} size="small" sx={{ mx: 0.5 }} />
-                  )) : null}
-                </Stack>
-                <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
-                  <StarIcon color="warning" fontSize="small" />
-                  <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.specialty}:</Typography>
-                  {member.specialty[lang] ? member.specialty[lang].map((s, idx) => (
-                    <Chip key={idx} label={s} size="small" sx={{ mx: 0.5 }} />
-                  )) : null}
-                </Stack>
-                <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 2 }}>
+                <Box sx={{ flexGrow: 1 }}>
+                  <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
+                    <WorkIcon color="primary" fontSize="small" />
+                    <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.career}:</Typography>
+                    <Typography variant="body2">{member.career[lang] || member.career.ko}</Typography>
+                  </Stack>
+                  <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
+                    <SchoolIcon color="primary" fontSize="small" />
+                    <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.degree}:</Typography>
+                    <Typography variant="body2">{member.degree[lang] || member.degree.ko}</Typography>
+                  </Stack>
+                  <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
+                    <VerifiedIcon color="success" fontSize="small" />
+                    <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.cert}:</Typography>
+                    {member.cert[lang] ? member.cert[lang].map((c, idx) => (
+                      <Chip key={idx} label={c} size="small" sx={{ mx: 0.5 }} />
+                    )) : null}
+                  </Stack>
+                  <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
+                    <StarIcon color="warning" fontSize="small" />
+                    <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.specialty}:</Typography>
+                    {member.specialty[lang] ? member.specialty[lang].map((s, idx) => (
+                      <Chip key={idx} label={s} size="small" sx={{ mx: 0.5 }} />
+                    )) : null}
+                  </Stack>
+                </Box>
+                <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 'auto' }}>
                   <LinkIcon color="info" fontSize="small" />
                   <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.sns}:</Typography>
                   {member.sns.map((sns, idx) => (

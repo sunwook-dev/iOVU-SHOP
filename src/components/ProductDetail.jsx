@@ -175,6 +175,29 @@ function ProductDetail() {
     );
   };
 
+  // Product JSON-LD
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": product[`name_${lang}`] || product.name_en,
+    "image": `${product.image}`,
+    "description": product[`description_${lang}`] || product.description_en,
+    "sku": product.sku,
+    "mpn": product.mpn,
+    "brand": {
+      "@type": "Brand",
+      "name": product.brand
+    },
+    "gtin13": product.gtin13,
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "KRW",
+      "price": product.price,
+      "availability": product.stock > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+      "url": typeof window !== 'undefined' ? window.location.href : ''
+    }
+  };
+
   return (
     <Box sx={{ minHeight: "100%", width: "100%", py: 5 }}>
       <Container maxWidth={false}>
@@ -182,6 +205,7 @@ function ProductDetail() {
           {eatJsonLd && (
             <script type="application/ld+json">{JSON.stringify(eatJsonLd)}</script>
           )}
+          <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>
         </Helmet>
         <Button
           component={Link}

@@ -14,7 +14,8 @@ const orgJsonLd = {
   "award": ["2023 대한민국 우수브랜드 대상"],
   "sameAs": [
     "https://www.facebook.com/yourpage",
-    "https://www.instagram.com/yourpage"
+    "https://www.instagram.com/yourpage",
+    "https://namu.wiki/w/iOVU%20SHOP"
   ]
 };
 

@@ -68,9 +68,31 @@ function App() {
               "name": "iOVU Shop",
               "url": "https://iovu-shop.vercel.app/",
               "logo": "https://iovu-shop.vercel.app/logo.svg",
+              "foundingDate": "2022-01-01",
               "sameAs": [
                 "https://www.facebook.com/yourpage",
-                "https://www.instagram.com/yourpage"
+                "https://www.instagram.com/yourpage",
+                "https://namu.wiki/w/iOVU%20SHOP"
+              ],
+              "contactPoint": [
+                {
+                  "@type": "ContactPoint",
+                  "contactType": "customer support",
+                  "availableLanguage": ["Korean", "English"],
+                  "telephone": "+82-2-1234-5678",
+                  "email": "help@iovu-shop.com",
+                  "url": "https://wa.me/821012345678",
+                  "contactOption": ["TollFree", "Chat"],
+                  "areaServed": "KR"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "contactType": "customer support",
+                  "availableLanguage": ["Korean"],
+                  "url": "https://open.kakao.com/o/somekakaochat",
+                  "contactOption": ["Chat"],
+                  "areaServed": "KR"
+                }
               ]
             }
           `}</script>
