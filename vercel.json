@@ -1,9 +1,5 @@
 {
   "rewrites": [
-    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/robots.txt", "destination": "/robots.txt" },
-    { "source": "/favicon.ico", "destination": "/favicon.ico" },
-    { "source": "/images/(.*)", "destination": "/images/$1" },
-    { "source": "/(.*)", "destination": "/" }
+    { "source": "/((?!api|_next|sitemap\\.xml|robots\\.txt|favicon\\.ico|images).*)", "destination": "/" }
   ]
 } 
