@@ -32,6 +32,14 @@ function LangRoutes() {
           <Route path="faq" element={<FAQ lang={lang} />} />
           <Route path="store" element={<StoreInfo lang={lang} />} />
           <Route path="guide" element={<Guide lang={lang} />} />
+          <Route path="about" element={<AboutUs lang={lang} />} />
+          <Route path="team" element={<TeamBio lang={lang} />} />
+          <Route path="editorial" element={<EditorialGuidelines lang={lang} />} />
+          <Route path="evidence" element={<Evidence lang={lang} />} />
+          <Route path="certifications" element={<Certifications lang={lang} />} />
+          <Route path="contact" element={<Contact lang={lang} />} />
+          <Route path="shipping" element={<Shipping lang={lang} />} />
+          <Route path="exchange" element={<Exchange lang={lang} />} />
         </Routes>
       </main>
       <footer>
@@ -40,6 +48,11 @@ function LangRoutes() {
     </>
   );
 }
+
+// 임시 컴포넌트 (404 방지용)
+const Shipping = () => <div><Helmet><title>배송안내 - iOVU SHOP</title></Helmet><h1>배송안내</h1></div>;
+const Exchange = () => <div><Helmet><title>교환/반품 - iOVU SHOP</title></Helmet><h1>교환/반품</h1></div>;
+const Contact = () => <div><Helmet><title>문의하기 - iOVU SHOP</title></Helmet><h1>문의하기</h1></div>;
 
 function App() {
   return (
@@ -66,13 +79,6 @@ function App() {
           {/* 기본 경로는 /ko/로 리디렉트 */}
           <Route path="/" element={<Navigate to="/ko/" replace />} />
           <Route path=":lang/*" element={<LangRoutes />} />
-          {/* 신규 필수 페이지 라우트 */}
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/team" element={<TeamBio />} />
-          <Route path="/editorial" element={<EditorialGuidelines />} />
-          <Route path="/evidence" element={<Evidence />} />
-          <Route path="/certifications" element={<Certifications />} />
-          <Route path="/trust" element={<Trust />} />
         </Routes>
       </Router>
     </HelmetProvider>

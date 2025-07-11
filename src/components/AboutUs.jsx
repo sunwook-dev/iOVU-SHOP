@@ -15,29 +15,47 @@ const orgJsonLd = {
   ]
 };
 
-export default function AboutUs() {
+const messages = {
+  ko: {
+    title: "회사소개",
+    mission: "브랜드 미션",
+    missionDesc: "최고의 품질과 디자인으로 모두가 만족하는 티셔츠를 만듭니다.",
+    history: "연혁",
+    historyDesc: "2022년 설립, 2023 대한민국 우수브랜드 대상 수상 등 다양한 성과를 이뤘습니다."
+  },
+  en: {
+    title: "About Us",
+    mission: "Brand Mission",
+    missionDesc: "We create t-shirts that satisfy everyone with the best quality and design.",
+    history: "History",
+    historyDesc: "Founded in 2022, awarded Korea Excellent Brand in 2023, and achieved various milestones."
+  }
+};
+
+export default function AboutUs({ lang = "ko" }) {
+  const t = messages[lang] || messages.ko;
   return (
     <Box sx={{ minHeight: '70vh', bgcolor: '#f5f7fa', py: 6 }}>
       <Helmet>
-        <title>About Us | iOVU Shop</title>
+        <title>{t.title} | iOVU Shop</title>
         <script type="application/ld+json">{JSON.stringify(orgJsonLd)}</script>
       </Helmet>
       <Container maxWidth="md">
         <Paper elevation={3} sx={{ p: 5, borderRadius: 3 }}>
           <Typography variant="h3" component="h1" align="center" sx={{ fontWeight: 700, mb: 3 }}>
-            About Us
+            {t.title}
           </Typography>
           <Typography variant="h5" sx={{ mb: 2 }}>
-            브랜드 미션
+            {t.mission}
           </Typography>
           <Typography sx={{ mb: 3 }}>
-            최고의 품질과 디자인으로 모두가 만족하는 티셔츠를 만듭니다.
+            {t.missionDesc}
           </Typography>
           <Typography variant="h5" sx={{ mb: 2 }}>
-            연혁
+            {t.history}
           </Typography>
           <Typography sx={{ mb: 3 }}>
-            2022년 설립, 2023 대한민국 우수브랜드 대상 수상 등 다양한 성과를 이루었습니다.
+            {t.historyDesc}
           </Typography>
           <img src="/logo.svg" alt="iOVU 본사" style={{ width: 200, display: 'block', margin: '0 auto' }} />
         </Paper>

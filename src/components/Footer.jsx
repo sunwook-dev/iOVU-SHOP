@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link as RouterLink, useParams } from "react-router-dom";
 import {
   Box,
   Container,
@@ -23,6 +23,10 @@ function Footer() {
       exchange: "교환/반품",
       companyInfo: "회사정보",
       about: "회사소개",
+      team: "팀 소개",
+      editorial: "에디토리얼 가이드",
+      evidence: "과학적/CSR 증거",
+      certifications: "인증/트러스트",
       terms: "이용약관",
       privacy: "개인정보처리방침",
       copyright: "© 2025 IOVU SHOP. All rights reserved."
@@ -35,6 +39,10 @@ function Footer() {
       exchange: "Exchange/Return",
       companyInfo: "Company Info",
       about: "About Us",
+      team: "Team Bio",
+      editorial: "Editorial Guidelines",
+      evidence: "Scientific/CSR Evidence",
+      certifications: "Certifications/Trust",
       terms: "Terms of Service",
       privacy: "Privacy Policy",
       copyright: "© 2025 IOVU SHOP. All rights reserved."
@@ -79,7 +87,7 @@ function Footer() {
             <List dense sx={{ p: 0 }}>
               <ListItem sx={{ px: 0 }}>
                 <ListItemText
-                  primary={currentMessages.contact}
+                  primary={<RouterLink to={`/${lang}/contact`} style={{ color: '#bdc3c7', textDecoration: 'none' }}>{currentMessages.contact}</RouterLink>}
                   sx={{
                     "& .MuiListItemText-primary": {
                       color: "#bdc3c7",
@@ -91,7 +99,7 @@ function Footer() {
               </ListItem>
               <ListItem sx={{ px: 0 }}>
                 <ListItemText
-                  primary={currentMessages.shipping}
+                  primary={<RouterLink to={`/${lang}/shipping`} style={{ color: '#bdc3c7', textDecoration: 'none' }}>{currentMessages.shipping}</RouterLink>}
                   sx={{
                     "& .MuiListItemText-primary": {
                       color: "#bdc3c7",
@@ -103,7 +111,7 @@ function Footer() {
               </ListItem>
               <ListItem sx={{ px: 0 }}>
                 <ListItemText
-                  primary={currentMessages.exchange}
+                  primary={<RouterLink to={`/${lang}/exchange`} style={{ color: '#bdc3c7', textDecoration: 'none' }}>{currentMessages.exchange}</RouterLink>}
                   sx={{
                     "& .MuiListItemText-primary": {
                       color: "#bdc3c7",
@@ -123,7 +131,7 @@ function Footer() {
             <List dense sx={{ p: 0 }}>
               <ListItem sx={{ px: 0 }}>
                 <ListItemText
-                  primary={currentMessages.about}
+                  primary={<RouterLink to={`/${lang}/about`} style={{ color: '#bdc3c7', textDecoration: 'none' }}>{currentMessages.about}</RouterLink>}
                   sx={{
                     "& .MuiListItemText-primary": {
                       color: "#bdc3c7",
@@ -135,7 +143,7 @@ function Footer() {
               </ListItem>
               <ListItem sx={{ px: 0 }}>
                 <ListItemText
-                  primary={currentMessages.terms}
+                  primary={<RouterLink to={`/${lang}/team`} style={{ color: '#bdc3c7', textDecoration: 'none' }}>{currentMessages.team}</RouterLink>}
                   sx={{
                     "& .MuiListItemText-primary": {
                       color: "#bdc3c7",
@@ -147,7 +155,31 @@ function Footer() {
               </ListItem>
               <ListItem sx={{ px: 0 }}>
                 <ListItemText
-                  primary={currentMessages.privacy}
+                  primary={<RouterLink to={`/${lang}/editorial`} style={{ color: '#bdc3c7', textDecoration: 'none' }}>{currentMessages.editorial}</RouterLink>}
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      color: "#bdc3c7",
+                      cursor: "pointer",
+                      "&:hover": { color: "#667eea" },
+                    },
+                  }}
+                />
+              </ListItem>
+              <ListItem sx={{ px: 0 }}>
+                <ListItemText
+                  primary={<RouterLink to={`/${lang}/evidence`} style={{ color: '#bdc3c7', textDecoration: 'none' }}>{currentMessages.evidence}</RouterLink>}
+                  sx={{
+                    "& .MuiListItemText-primary": {
+                      color: "#bdc3c7",
+                      cursor: "pointer",
+                      "&:hover": { color: "#667eea" },
+                    },
+                  }}
+                />
+              </ListItem>
+              <ListItem sx={{ px: 0 }}>
+                <ListItemText
+                  primary={<RouterLink to={`/${lang}/certifications`} style={{ color: '#bdc3c7', textDecoration: 'none' }}>{currentMessages.certifications}</RouterLink>}
                   sx={{
                     "& .MuiListItemText-primary": {
                       color: "#bdc3c7",
