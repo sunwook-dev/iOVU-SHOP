@@ -8,7 +8,9 @@ import {
   List,
   ListItem,
   ListItemIcon,
-  ListItemText
+  ListItemText,
+  Button,
+  Stack
 } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
@@ -16,8 +18,11 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
 import WifiIcon from "@mui/icons-material/Wifi";
 import LanguageIcon from "@mui/icons-material/Language";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import { useParams } from "react-router-dom";
 import usePageSEO from '../utils/usePageSEO';
+import { Helmet } from "react-helmet-async";
 
 export default function StoreInfo() {
   const { lang } = useParams();
@@ -52,7 +57,8 @@ export default function StoreInfo() {
 
   const currentMessages = messages[lang] || messages.ko;
 
-  const storeJsonLd = {
+  // JSON-LD 구조화 데이터
+  const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": currentMessages.storeName,
@@ -71,33 +77,36 @@ export default function StoreInfo() {
       "longitude": 127.039585
     },
     "telephone": "+82-2-1234-5678",
+    "email": "help@iovu-shop.com",
     "url": "https://iovu-shop.vercel.app/store",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
         ],
         "opens": "10:00",
         "closes": "21:00"
       }
     ],
-    "amenityFeature": [
+    "contactPoint": [
       {
-        "@type": "LocationFeatureSpecification",
-        "name": lang === 'en' ? "Free Wi-Fi" : "무료 Wi-Fi",
-        "value": true
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "availableLanguage": ["Korean", "English"],
+        "telephone": "+82-2-1234-5678",
+        "email": "help@iovu-shop.com",
+        "url": "https://wa.me/821012345678",
+        "contactOption": ["TollFree", "Chat"],
+        "areaServed": "KR"
       },
       {
-        "@type": "LocationFeatureSpecification",
-        "name": lang === 'en' ? "Parking Available" : "주차 가능",
-        "value": true
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "availableLanguage": ["Korean"],
+        "url": "https://open.kakao.com/o/somekakaochat",
+        "contactOption": ["Chat"],
+        "areaServed": "KR"
       }
     ]
   };
@@ -114,6 +123,10 @@ export default function StoreInfo() {
   });
   return (
     <Box sx={{ minHeight: '70vh', bgcolor: '#f5f7fa', py: 6 }}>
+      <Helmet>
+        <title>{currentMessages.title} | iOVU Shop</title>
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      </Helmet>
       <Container maxWidth="sm">
         <Paper elevation={0} sx={{ p: 5, borderRadius: 3, bgcolor: 'transparent', boxShadow: 'none' }}>
           <Typography variant="h3" component="h1" align="center" sx={{ fontWeight: 700, mb: 3 }}>
@@ -149,6 +162,31 @@ export default function StoreInfo() {
               <ListItemText primary={currentMessages.website} />
             </ListItem>
           </List>
+          {/* 채팅 위젯 */}
+          <Stack direction="row" spacing={2} justifyContent="center" sx={{ mt: 3, mb: 2 }}>
+            <Button
+              variant="contained"
+              color="success"
+              startIcon={<WhatsAppIcon />}
+              href="https://wa.me/821012345678"
+              target="_blank"
+              rel="noopener"
+              sx={{ fontWeight: 600 }}
+            >
+              WhatsApp
+            </Button>
+            <Button
+              variant="contained"
+              color="warning"
+              startIcon={<ChatBubbleIcon />}
+              href="https://open.kakao.com/o/somekakaochat"
+              target="_blank"
+              rel="noopener"
+              sx={{ fontWeight: 600, color: '#fff', background: '#fae100', '&:hover': { background: '#ffe066' } }}
+            >
+              Kakao
+            </Button>
+          </Stack>
           <Box sx={{ mt: 4, textAlign: 'center' }}>
             <iframe
               title={currentMessages.mapTitle}
