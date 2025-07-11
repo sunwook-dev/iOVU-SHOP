@@ -1,62 +1,186 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
   <url>
-    <loc>https://iovu-shop.vercel.app/</loc>
-    <lastmod>2024-05-01</lastmod>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/</loc>
+    <lastmod>2025-07-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://iovu-shop.vercel.app/category/mens</loc>
-    <lastmod>2024-05-01</lastmod>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Category pages -->
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/category/mens</loc>
+    <lastmod>2025-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iovu-shop.vercel.app/category/womens</loc>
-    <lastmod>2024-05-01</lastmod>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/category/mens</loc>
+    <lastmod>2025-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iovu-shop.vercel.app/category/unisex</loc>
-    <lastmod>2024-05-01</lastmod>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/category/womens</loc>
+    <lastmod>2025-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://iovu-shop.vercel.app/product/1</loc>
-    <lastmod>2024-05-01</lastmod>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/category/womens</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/category/unisex</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/category/unisex</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Product pages (example for 3 products) -->
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/product/1</loc>
+    <lastmod>2025-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://iovu-shop.vercel.app/product/2</loc>
-    <lastmod>2024-05-01</lastmod>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/product/1</loc>
+    <lastmod>2025-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://iovu-shop.vercel.app/product/3</loc>
-    <lastmod>2024-05-01</lastmod>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/product/2</loc>
+    <lastmod>2025-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://iovu-shop.vercel.app/faq</loc>
-    <lastmod>2024-05-01</lastmod>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/product/2</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/product/3</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/product/3</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Info pages (About, Team, Editorial, Evidence, Certifications, FAQ, StoreInfo, Guide) -->
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/about</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/about</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/team</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/team</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/editorial</loc>
+    <lastmod>2025-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://iovu-shop.vercel.app/storeinfo</loc>
-    <lastmod>2024-05-01</lastmod>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/editorial</loc>
+    <lastmod>2025-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://iovu-shop.vercel.app/guide</loc>
-    <lastmod>2024-05-01</lastmod>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/evidence</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/evidence</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/certifications</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/certifications</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/faq</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/faq</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/store</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/store</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/ko/guide</loc>
+    <lastmod>2025-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://i-ovu-shop-tsyl.vercel.app/en/guide</loc>
+    <lastmod>2025-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
