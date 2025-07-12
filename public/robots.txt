@@ -8,12 +8,16 @@ Disallow: /*?*sort=*
 Allow: /cart/thank-you
 Allow: /*.css$
 Allow: /
+Crawl-delay: 3
 
 # Bot별 정책
 User-agent: GPTBot
 Disallow: /internal/
 
 User-agent: AdsBot-Google
+Crawl-delay: 5
+
+User-agent: Bingbot
 Crawl-delay: 5
 
 # 사이트맵
