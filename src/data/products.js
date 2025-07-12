@@ -1,8 +1,8 @@
 export const products = [
   {
     id: 1,
-    name_ko: "헬멧 토끼의 npm install 티셔츠",
-    name_en: "Helmet Bunny npm install T-shirt",
+    name_ko: "헬멧 토끼 티셔츠",
+    name_en: "Helmet Bunny Tee",
     price: 29000,
     image: "/images/rabbit_keyboard1.png",
     description_ko:
@@ -36,8 +36,8 @@ export const products = [
   },
   {
     id: 2,
-    name_ko: "해바라기 토끼의 에러 극복 티셔츠",
-    name_en: "Sunflower Bunny Error Overcome T-shirt",
+    name_ko: "해바라기 토끼 티셔츠",
+    name_en: "Sunflower Bunny Tee",
     price: 35000,
     image: "/images/rabbit_keyboard2.png",
     description_ko:
@@ -71,8 +71,8 @@ export const products = [
   },
   {
     id: 3,
-    name_ko: "치즈 토끼의 키보드 코딩 티셔츠",
-    name_en: "Cheese Bunny Keyboard Coding T-shirt",
+    name_ko: "치즈 토끼 티셔츠",
+    name_en: "Cheese Bunny Tee",
     price: 42000,
     image: "/images/rabbit_keyboard3.png",
     description_ko:
@@ -106,8 +106,8 @@ export const products = [
   },
   {
     id: 4,
-    name_ko: "브라운 토끼의 치즈 설치 티셔츠",
-    name_en: "Brown Bunny Cheese Install T-shirt",
+    name_ko: "브라운 토끼 티셔츠",
+    name_en: "Brown Bunny Tee",
     price: 21000,
     image: "/images/rabbit_keyboard4.png",
     description_ko:
@@ -141,8 +141,8 @@ export const products = [
   },
   {
     id: 5,
-    name_ko: "햄스터의 해바라기 키보드 티셔츠",
-    name_en: "Hamster Sunflower Keyboard T-shirt",
+    name_ko: "햄스터 해바라기 티셔츠",
+    name_en: "Hamster Sunflower Tee",
     price: 27000,
     image: "/images/rabbit_keyboard5.png",
     description_ko:
@@ -176,8 +176,8 @@ export const products = [
   },
   {
     id: 6,
-    name_ko: "회색 토끼의 보라 키보드 티셔츠",
-    name_en: "Gray Bunny Purple Keyboard T-shirt",
+    name_ko: "회색 토끼 티셔츠",
+    name_en: "Gray Bunny Tee",
     price: 18000,
     image: "/images/rabbit_keyboard6.png",
     description_ko:
@@ -211,8 +211,8 @@ export const products = [
   },
   {
     id: 7,
-    name_ko: "청록 토끼의 치즈 키보드 티셔츠",
-    name_en: "Teal Bunny Cheese Keyboard T-shirt",
+    name_ko: "청록 토끼 티셔츠",
+    name_en: "Teal Bunny Tee",
     price: 38000,
     image: "/images/rabbit_keyboard7.png",
     description_ko:
@@ -245,8 +245,8 @@ export const products = [
   },
   {
     id: 8,
-    name_ko: "햄스터의 분홍 키보드 티셔츠",
-    name_en: "Hamster Pink Keyboard T-shirt",
+    name_ko: "분홍 햄스터 티셔츠",
+    name_en: "Pink Hamster Tee",
     price: 45000,
     image: "/images/rabbit_keyboard8.png",
     description_ko:
@@ -280,8 +280,8 @@ export const products = [
   },
   {
     id: 9,
-    name_ko: "레드 토끼의 치즈 설치 티셔츠",
-    name_en: "Red Bunny Cheese Install T-shirt",
+    name_ko: "레드 토끼 티셔츠",
+    name_en: "Red Bunny Tee",
     price: 15000,
     image: "/images/rabbit_keyboard9.png",
     description_ko:
@@ -315,8 +315,8 @@ export const products = [
   },
   {
     id: 10,
-    name_ko: "햄스터의 맥북 코딩 티셔츠",
-    name_en: "Hamster MacBook Coding T-shirt",
+    name_ko: "맥북 햄스터 티셔츠",
+    name_en: "MacBook Hamster Tee",
     price: 32000,
     image: "/images/rabbit_keyboard10.png",
     description_ko:

@@ -82,7 +82,7 @@ export default function Category() {
         </Typography>
 
         {filtered.length > 0 ? (
-          <Grid container spacing={3}>
+          <Grid container spacing={2}>
             {filtered.map(product => (
               <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
                 <Card 
@@ -90,6 +90,8 @@ export default function Category() {
                   to={`/${lang}/product/${product.id}`}
                   sx={{ 
                     height: '100%',
+                    maxWidth: 260,
+                    minHeight: 380,
                     display: 'flex', 
                     flexDirection: 'column',
                     textDecoration: 'none',
@@ -105,16 +107,16 @@ export default function Category() {
                 >
                   <CardMedia
                     component="img"
-                    height="240"
+                    height="200"
                     image={product.image}
                     alt={`${product.gender || ''}용 ${product.name_ko || product.name} 정면 이미지`}
-                    sx={{ objectFit: 'cover' }}
+                    sx={{ objectFit: 'contain', background: '#fff' }}
                   />
                   <CardContent sx={{ 
                     flexGrow: 1, 
                     display: 'flex', 
                     flexDirection: 'column',
-                    p: 3
+                    p: 2
                   }}>
                     <Typography 
                       variant="h6" 
@@ -122,12 +124,7 @@ export default function Category() {
                       sx={{ 
                         fontWeight: 600,
                         mb: 1,
-                        lineHeight: 1.3,
-                        height: 40,
-                        overflow: 'hidden',
-                        display: '-webkit-box',
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: 'vertical'
+                        lineHeight: 1.3
                       }}
                     >
                       {lang === "en" ? product.name_en || product.name : product.name_ko || product.name}

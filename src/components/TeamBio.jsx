@@ -100,18 +100,18 @@ export default function TeamBio({ lang = "ko" }) {
         <Typography variant="h3" component="h1" align="center" sx={{ fontWeight: 700, mb: 5, letterSpacing: 2 }}>
           {t.title}
         </Typography>
-        <Grid container spacing={4} justifyContent="center" alignItems="stretch">
+        <Grid container spacing={2} justifyContent="center" alignItems="stretch">
           {team.map((member, i) => (
-            <Grid item xs={12} md={6} key={i} sx={{ display: 'flex', height: '100%' }}>
-              <Paper elevation={0} sx={{ p: 4, borderRadius: 3, bgcolor: 'transparent', boxShadow: 'none', border: '1px solid #e0e0e0', display: 'flex', flexDirection: 'column', height: '100%' }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                  <Avatar src={member.image} sx={{ width: 72, height: 72, mr: 2 }} />
-                  <Box>
-                    <Typography variant="h5" sx={{ fontWeight: 600 }}>{member.name[lang] || member.name.ko}</Typography>
-                    <Typography variant="subtitle1" color="text.secondary" sx={{ fontWeight: 500 }}>{member.position[lang] || member.position.ko}</Typography>
-                  </Box>
+            <Grid item xs={12} sm={6} md={4} lg={3} key={i} sx={{ display: 'flex', height: '100%' }}>
+              <Paper elevation={0} sx={{ p: 2, borderRadius: 3, bgcolor: 'transparent', boxShadow: 'none', border: '1px solid #e0e0e0', display: 'flex', flexDirection: 'column', height: '100%', maxWidth: 340, minHeight: 380, mx: 'auto' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, justifyContent: 'center' }}>
+                  <Avatar src={member.image} sx={{ width: 100, height: 100, mr: 0, mb: 1 }} />
                 </Box>
-                <Divider sx={{ my: 2 }} />
+                <Box sx={{ textAlign: 'center', mb: 1 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 600 }}>{member.name[lang] || member.name.ko}</Typography>
+                  <Typography variant="subtitle2" color="text.secondary" sx={{ fontWeight: 500 }}>{member.position[lang] || member.position.ko}</Typography>
+                </Box>
+                <Divider sx={{ my: 1 }} />
                 <Box sx={{ flexGrow: 1 }}>
                   <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
                     <WorkIcon color="primary" fontSize="small" />
@@ -138,7 +138,7 @@ export default function TeamBio({ lang = "ko" }) {
                     )) : null}
                   </Stack>
                 </Box>
-                <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 'auto' }}>
+                <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 'auto', justifyContent: 'center' }}>
                   <LinkIcon color="info" fontSize="small" />
                   <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.sns}:</Typography>
                   {member.sns.map((sns, idx) => (

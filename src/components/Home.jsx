@@ -84,7 +84,7 @@ export default function Home({ lang }) {
           {messages[lang]?.best}
         </Typography>
 
-        <Grid container spacing={4} justifyContent="center">
+        <Grid container spacing={2} justifyContent="center">
           {bestProducts.map((product) => (
             <Grid item xs={12} sm={6} md={4} key={product.id}>
               <Card
@@ -92,6 +92,8 @@ export default function Home({ lang }) {
                 to={`/${lang}/product/${product.id}`}
                 sx={{
                   height: "100%",
+                  maxWidth: 260,
+                  minHeight: 380,
                   display: "flex",
                   flexDirection: "column",
                   textDecoration: "none",
@@ -105,17 +107,19 @@ export default function Home({ lang }) {
               >
                 <CardMedia
                   component="img"
-                  height="250"
+                  height="200"
                   image={product.image}
                   alt={`${product.gender || ''}용 ${product.name_ko || product.name} 정면 이미지`}
                   sx={{
+                    objectFit: "contain",
+                    background: "#fff",
                     transition: "transform 0.3s ease",
                     "&:hover": {
                       transform: "scale(1.1)",
                     },
                   }}
                 />
-                <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                <CardContent sx={{ flexGrow: 1, p: 2 }}>
                   <Typography
                     variant="h5"
                     component="h3"
