@@ -96,61 +96,202 @@ export default function TeamBio({ lang = "ko" }) {
           })}</script>
         ))}
       </Helmet>
-      <Container maxWidth="md">
-        <Typography variant="h3" component="h1" align="center" sx={{ fontWeight: 700, mb: 5, letterSpacing: 2 }}>
+      <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 3, md: 2 } }}>
+        <Typography 
+          variant="h3" 
+          component="h1" 
+          align="center" 
+          sx={{ 
+            fontWeight: 700, 
+            mb: 6, 
+            letterSpacing: 1,
+            color: 'text.primary',
+            fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' }
+          }}
+        >
           {t.title}
         </Typography>
-        <Grid container spacing={2} justifyContent="center" alignItems="stretch">
+        <Grid container spacing={2} justifyContent="center" alignItems="stretch" sx={{ maxWidth: 1400, mx: 'auto' }}>
           {team.map((member, i) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={i} sx={{ display: 'flex', height: '100%' }}>
-              <Paper elevation={0} sx={{ p: 2, borderRadius: 3, bgcolor: 'transparent', boxShadow: 'none', border: '1px solid #e0e0e0', display: 'flex', flexDirection: 'column', height: '100%', maxWidth: 340, minHeight: 380, mx: 'auto' }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', mb: 2, justifyContent: 'center' }}>
-                  <Avatar src={member.image} sx={{ width: 100, height: 100, mr: 0, mb: 1 }} />
+            <Grid item xs={12} sm={6} md={4} lg={3} xl={3} key={i} sx={{ display: 'flex', minWidth: 0 }}>
+              <Paper 
+                elevation={2} 
+                sx={{ 
+                  p: 2.5, 
+                  borderRadius: 3, 
+                  bgcolor: 'white',
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  width: '100%',
+                  height: 520,
+                  minWidth: 280,
+                  maxWidth: 300,
+                  flex: 1,
+                  transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
+                  '&:hover': {
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
+                  }
+                }}
+              >
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: 2.5 }}>
+                  <Avatar 
+                    src={member.image} 
+                    sx={{ 
+                      width: 70, 
+                      height: 70, 
+                      mb: 1.5,
+                      border: '3px solid #f0f0f0'
+                    }} 
+                  />
+                  <Typography variant="h6" sx={{ fontWeight: 600, textAlign: 'center', mb: 0.5, fontSize: '1.1rem' }}>
+                    {member.name[lang] || member.name.ko}
+                  </Typography>
+                  <Typography 
+                    variant="subtitle2" 
+                    color="primary" 
+                    sx={{ fontWeight: 500, textAlign: 'center', fontSize: '0.85rem' }}
+                  >
+                    {member.position[lang] || member.position.ko}
+                  </Typography>
                 </Box>
-                <Box sx={{ textAlign: 'center', mb: 1 }}>
-                  <Typography variant="h6" sx={{ fontWeight: 600 }}>{member.name[lang] || member.name.ko}</Typography>
-                  <Typography variant="subtitle2" color="text.secondary" sx={{ fontWeight: 500 }}>{member.position[lang] || member.position.ko}</Typography>
+                
+                <Divider sx={{ mb: 2 }} />
+                
+                <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: 1.2, overflow: 'hidden' }}>
+                  <Box sx={{ minHeight: 50 }}>
+                    <Stack direction="row" alignItems="flex-start" spacing={1} sx={{ mb: 0.5 }}>
+                      <WorkIcon color="primary" fontSize="small" sx={{ mt: 0.2, flexShrink: 0 }} />
+                      <Box sx={{ overflow: 'hidden' }}>
+                        <Typography variant="body2" sx={{ fontWeight: 600, color: 'text.primary', fontSize: '0.8rem' }}>
+                          {t.career}
+                        </Typography>
+                        <Typography 
+                          variant="body2" 
+                          color="text.secondary" 
+                          sx={{ 
+                            lineHeight: 1.3,
+                            fontSize: '0.75rem',
+                            display: '-webkit-box',
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: 'vertical',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis'
+                          }}
+                        >
+                          {member.career[lang] || member.career.ko}
+                        </Typography>
+                      </Box>
+                    </Stack>
+                  </Box>
+
+                  <Box sx={{ minHeight: 50 }}>
+                    <Stack direction="row" alignItems="flex-start" spacing={1} sx={{ mb: 0.5 }}>
+                      <SchoolIcon color="primary" fontSize="small" sx={{ mt: 0.2, flexShrink: 0 }} />
+                      <Box sx={{ overflow: 'hidden' }}>
+                        <Typography variant="body2" sx={{ fontWeight: 600, color: 'text.primary', fontSize: '0.8rem' }}>
+                          {t.degree}
+                        </Typography>
+                        <Typography 
+                          variant="body2" 
+                          color="text.secondary" 
+                          sx={{ 
+                            lineHeight: 1.3,
+                            fontSize: '0.75rem',
+                            display: '-webkit-box',
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: 'vertical',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis'
+                          }}
+                        >
+                          {member.degree[lang] || member.degree.ko}
+                        </Typography>
+                      </Box>
+                    </Stack>
+                  </Box>
+
+                  <Box sx={{ minHeight: 55 }}>
+                    <Stack direction="row" alignItems="flex-start" spacing={1} sx={{ mb: 0.5 }}>
+                      <VerifiedIcon color="success" fontSize="small" sx={{ mt: 0.2, flexShrink: 0 }} />
+                      <Box sx={{ overflow: 'hidden' }}>
+                        <Typography variant="body2" sx={{ fontWeight: 600, color: 'text.primary', mb: 0.5, fontSize: '0.8rem' }}>
+                          {t.cert}
+                        </Typography>
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.3 }}>
+                          {member.cert[lang] ? member.cert[lang].map((c, idx) => (
+                            <Chip 
+                              key={idx} 
+                              label={c} 
+                              size="small" 
+                              color="success" 
+                              variant="outlined"
+                              sx={{ fontSize: '0.65rem', height: 18 }}
+                            />
+                          )) : null}
+                        </Box>
+                      </Box>
+                    </Stack>
+                  </Box>
+
+                  <Box sx={{ minHeight: 55 }}>
+                    <Stack direction="row" alignItems="flex-start" spacing={1} sx={{ mb: 0.5 }}>
+                      <StarIcon color="warning" fontSize="small" sx={{ mt: 0.2, flexShrink: 0 }} />
+                      <Box sx={{ overflow: 'hidden' }}>
+                        <Typography variant="body2" sx={{ fontWeight: 600, color: 'text.primary', mb: 0.5, fontSize: '0.8rem' }}>
+                          {t.specialty}
+                        </Typography>
+                        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.3 }}>
+                          {member.specialty[lang] ? member.specialty[lang].map((s, idx) => (
+                            <Chip 
+                              key={idx} 
+                              label={s} 
+                              size="small" 
+                              color="warning" 
+                              variant="outlined"
+                              sx={{ fontSize: '0.65rem', height: 18 }}
+                            />
+                          )) : null}
+                        </Box>
+                      </Box>
+                    </Stack>
+                  </Box>
                 </Box>
-                <Divider sx={{ my: 1 }} />
-                <Box sx={{ flexGrow: 1 }}>
-                  <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
-                    <WorkIcon color="primary" fontSize="small" />
-                    <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.career}:</Typography>
-                    <Typography variant="body2">{member.career[lang] || member.career.ko}</Typography>
-                  </Stack>
-                  <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
-                    <SchoolIcon color="primary" fontSize="small" />
-                    <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.degree}:</Typography>
-                    <Typography variant="body2">{member.degree[lang] || member.degree.ko}</Typography>
-                  </Stack>
-                  <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
-                    <VerifiedIcon color="success" fontSize="small" />
-                    <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.cert}:</Typography>
-                    {member.cert[lang] ? member.cert[lang].map((c, idx) => (
-                      <Chip key={idx} label={c} size="small" sx={{ mx: 0.5 }} />
-                    )) : null}
-                  </Stack>
-                  <Stack direction="row" alignItems="center" spacing={1} sx={{ mb: 1 }}>
-                    <StarIcon color="warning" fontSize="small" />
-                    <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.specialty}:</Typography>
-                    {member.specialty[lang] ? member.specialty[lang].map((s, idx) => (
-                      <Chip key={idx} label={s} size="small" sx={{ mx: 0.5 }} />
-                    )) : null}
+
+                <Box sx={{ mt: 'auto', pt: 1.5 }}>
+                  <Divider sx={{ mb: 1.5 }} />
+                  <Stack direction="row" alignItems="center" spacing={0.5} sx={{ justifyContent: 'center' }}>
+                    <LinkIcon color="info" fontSize="small" />
+                    <Typography variant="body2" sx={{ fontWeight: 600, color: 'text.primary', fontSize: '0.8rem' }}>
+                      {t.sns}:
+                    </Typography>
+                    {member.sns.map((sns, idx) => (
+                      <Link 
+                        key={idx} 
+                        href={sns.url} 
+                        target="_blank" 
+                        rel="noopener" 
+                        sx={{ 
+                          ml: 0.5, 
+                          display: 'flex', 
+                          alignItems: 'center',
+                          color: 'primary.main',
+                          textDecoration: 'none',
+                          '&:hover': {
+                            textDecoration: 'underline'
+                          }
+                        }} 
+                      >
+                        {sns.icon}
+                        <Typography variant="body2" sx={{ ml: 0.3, fontSize: '0.75rem' }}>
+                          {sns.label}
+                        </Typography>
+                      </Link>
+                    ))}
                   </Stack>
                 </Box>
-                <Stack direction="row" alignItems="center" spacing={1} sx={{ mt: 'auto', justifyContent: 'center' }}>
-                  <LinkIcon color="info" fontSize="small" />
-                  <Typography variant="body1" sx={{ fontWeight: 500 }}>{t.sns}:</Typography>
-                  {member.sns.map((sns, idx) => (
-                    <Link key={idx} href={sns.url} target="_blank" rel="noopener" sx={{ ml: 1, display: 'flex', alignItems: 'center' }} underline="hover">
-                      {sns.icon}
-                      <Typography variant="body2" sx={{ ml: 0.5 }}>{sns.label}</Typography>
-                    </Link>
-                  ))}
-                </Stack>
               </Paper>
-            </Grid>
-          ))}
+            </Grid>            ))}
         </Grid>
       </Container>
     </Box>
